@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['api']], function () {
+    Route::get('/tasks', 'TaskController@index');
+    Route::get('/task/{id}', 'TaskController@show');
+    Route::post('/task', 'TaskController@create');
+
+    Route::get('/searchEngines/{code}', 'SearchEngineController@index');
+
+    Route::put('/updateResults','TaskResultController@checkAllResults');
 });
+
+
+

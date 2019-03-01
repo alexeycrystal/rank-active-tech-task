@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -128,4 +128,17 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Eloquent repository driver selection for different models
+    |--------------------------------------------------------------------------
+    |
+    | To use the different implementations of the eloquent model (MySQL,
+    | Oracle and so else) - select your specific realization
+    |
+    */
+
+    'eloquent-model-repository' => [
+        'task' => 'App\Repositories\TaskRepository',
+    ]
 ];

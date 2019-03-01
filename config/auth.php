@@ -99,4 +99,11 @@ return [
         ],
     ],
 
+    'api' => [
+        'user' => [
+            'login' => env('REMOTE_RUNKACTIVE_USER'),
+            'password' => env('REMOTE_RUNKACTIVE_PASSWORD'),
+            'hash' => env('REMOTE_RUNKACTIVE_HASH')
+        ]
+    ]
 ];

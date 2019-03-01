@@ -8,8 +8,4 @@ class InitController extends Controller
     public function init(){
         return view()->make('welcome');
     }
-
-    public function handleVueRoutes(){
-
-    }
 }

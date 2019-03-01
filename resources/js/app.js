@@ -1,33 +1,35 @@
+import Vue from 'vue';
+import App from './App';
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+window.$ = require('jquery');
 
-require('./bootstrap');
+import router from './router';
+import ApiService from './api/api.service';
+import VueSelect from "vue-cool-select";
+import VeeValidate from 'vee-validate';
+import Notify from 'vue2-notify';
+import VModal from 'vue-js-modal'
 
-window.Vue = require('vue');
+import { ClientTable} from 'vue-tables-2';
+let options = {};
+let useVuex = false;
+let theme = "bootstrap4";
+let template = "default";
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.use(VueSelect, {theme: 'bootstrap'});
+Vue.use(VeeValidate);
+Vue.use(Notify, {position: 'top-full'});
+Vue.use(ClientTable, options, useVuex, theme, template);
+Vue.use(VModal);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+ApiService.init();
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.config.productionTip = false;
 
-const app = new Vue({
-    el: '#app'
-});
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app');

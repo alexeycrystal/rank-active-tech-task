@@ -11,8 +11,12 @@
     },
     "devDependencies": {
         "axios": "^0.18",
+        "babel-loader": "^8.0.5",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "css-loader": "^2.1.0",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "jest": "^23.6.0",
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
@@ -20,6 +24,22 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue": "^2.5.17"
+        "vue": "^2.5.22",
+        "vue-axios": "^2.1.4",
+        "vue-router": "^3.0.2",
+        "vue-template-compiler": "^2.5.22"
+    },
+    "dependencies": {
+        "js-cookie": "^2.2.0",
+        "vee-validate": "^2.1.7",
+        "velocity-animate": "^1.5.2",
+        "vue-cool-select": "^2.0.4",
+        "vue-country-region-select": "^1.1.1",
+        "vue-js-modal": "^1.3.28",
+        "vue-loader": "^15.5.1",
+        "vue-select": "^2.5.1",
+        "vue-style-loader": "^4.1.2",
+        "vue-tables-2": "^1.4.70",
+        "vue2-notify": "^1.4.0"
     }
 }
